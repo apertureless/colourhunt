@@ -1,0 +1,7 @@
+mutation createPalette($title: String!, $colors: [String!]!) {
+  createPalette(title: $title, colors: $colors) {
+    id
+    title
+    colors
+  }
+}

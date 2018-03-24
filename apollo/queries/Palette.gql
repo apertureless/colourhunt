@@ -1,0 +1,7 @@
+query palette($id: ID!) {
+  Palette(id: $id) {
+    id
+    colors
+    title
+  }
+}

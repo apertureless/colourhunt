@@ -1,0 +1,44 @@
+{
+  "name": "colourhunt",
+  "version": "1.0.0",
+  "description": "Nuxt.js project",
+  "author": "Jakub Juszczak <netghost03@gmail.com>",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "npm run lint"
+  },
+  "dependencies": {
+    "@nuxtjs/apollo": "^3.0.5",
+    "apollo-cache-inmemory": "^1.1.11",
+    "apollo-client": "^2.2.7",
+    "apollo-link": "^1.2.1",
+    "apollo-link-http": "^1.5.3",
+    "graphql": "^0.13.2",
+    "graphql-tag": "^2.8.0",
+    "nuxt": "^1.0.0",
+    "vue-apollo": "^3.0.0-beta.5",
+    "vue-clickaway": "^2.1.0",
+    "vue-color": "^2.4.5",
+    "vue-password-strength-meter": "^1.1.1",
+    "zxcvbn": "^4.4.2"
+  },
+  "devDependencies": {
+    "@nextindex/next-scss": "^1.2.1",
+    "autoprefixer": "^8.1.0",
+    "babel-eslint": "^8.2.1",
+    "eslint": "^4.19.0",
+    "eslint-friendly-formatter": "^3.0.0",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-vue": "^4.0.0",
+    "glob-all": "^3.1.0",
+    "node-sass": "^4.7.2",
+    "purgecss-webpack-plugin": "^0.20.1",
+    "sass-loader": "^6.0.7",
+    "tailwindcss": "^0.5.1"
+  }
+}

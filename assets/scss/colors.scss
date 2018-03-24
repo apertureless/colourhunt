@@ -1,0 +1,20 @@
+$colors: (
+  highlight: #FF006C,
+  background-base: #F4F5F5,
+  background-light: #fff,
+  border-color: #EBEBEB,
+  text-color: #847E80
+);
+
+@function color($name) {
+  @if map-has-key(getColors(), $name) {
+    @return map-get(getColors(), $name);
+  } @else {
+    @warn "Color not found: #{$name}";
+    @return #000;
+  }
+}
+
+@function getColors() {
+  @return $colors;
+}

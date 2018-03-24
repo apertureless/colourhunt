@@ -1,0 +1,118 @@
+@import "includes";
+
+body {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: color(text-color);
+  font-family: $base-font-family;
+  font-feature-settings: "kern", "liga", "pnum";
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  background: color(background-base);
+}
+
+h1, h2, h3, h4 {
+  font-family: $heading-font-family;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+.button {
+  font-size: rem(12);
+  text-transform: uppercase;
+  font-weight: bold;
+  color: color(text-color);
+  border: 1px solid color(border-color);
+  padding: rem(10) rem(15);
+  background: color(background-light);
+  border-radius: $base-border-radius;
+  appearance: none;
+  cursor: pointer;
+
+  @include hover-active-states() {
+    background: color(background-base);
+  }
+
+  &.is-active {
+    background: color(background-base);
+  }
+
+  @include variant(small) {
+    padding: rem(5) rem(10);
+  }
+
+  & + .button {
+    margin-left: rem(8);
+  }
+}
+
+.button-clean {
+  appearance: none;
+  border: none;
+  display: block;
+  cursor: pointer;
+  font-size: rem(13);
+  color: lighten(#847E80, 10%);
+  margin: rem(16) 0;
+  @include hover-active-states () {
+    color: color(highlight);
+  }
+}
+
+
+.Content {
+  @include container();
+
+  @include has(list) {
+    margin: rem(50) rem(-10);
+    display: flex;
+    flex-flow: row wrap;
+  }
+}
+
+
+label {
+  display: block;
+  font-size: rem(16);
+  font-weight: bold;
+  margin-bottom: rem(8);
+}
+
+input {
+  background-color: #f1f1f1;
+  border: 1px solid #f1f1f1;
+  border-radius: rem(2);
+  box-sizing: border-box;
+  font-size: rem(14);
+  padding: rem(13);
+  width: 100%;
+  margin-bottom: rem(16);
+  display: block;
+}
+
+.card {
+  border-radius: $base-border-radius;
+  background: color(background-light);
+  padding: rem(15);
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+  legend {
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+    font-size: rem(22);
+    color: color(highlight);
+    margin-bottom: rem(32);
+    display: block;
+    text-align: center;
+  }
+}

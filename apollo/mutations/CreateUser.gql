@@ -1,0 +1,16 @@
+mutation CreateUserMutation($email: String!, $password: String!) {
+  signupUser(
+    email: $email,
+    password: $password
+  ) {
+    id
+  }
+
+  authenticateUser(
+    email: $email,
+    password: $password
+  ) {
+    id
+    token
+  }
+}

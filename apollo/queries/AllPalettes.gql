@@ -1,0 +1,8 @@
+query allPalettes {
+  allPalettes(orderBy: upvotes_DESC) {
+    id
+    title
+    upvotes
+    colors
+  }
+}
