@@ -53,10 +53,13 @@
 </template>
 
 <script>
-import CREATE_PALETTE from '~/apollo/mutations/CreatePalette'
-import ALL_PALETTES from '~/apollo/queries/AllPalettes'
 import { Chrome as ChromePicker } from 'vue-color'
 import { mixin as clickaway } from 'vue-clickaway'
+
+import CREATE_PALETTE from '~/apollo/mutations/CreatePalette'
+import ALL_PALETTES from '~/apollo/queries/AllPalettes'
+
+import { mapGetters } from 'vuex'
 const Swatch = () => import(/* webpackChunkName: 'swatch' */'~/components/swatch/ColorSwatch')
 const AddSwatch = ()  => import(/* webpackChunkName: 'add-swatch' */'~/components/swatch/AddSwatch')
 
@@ -113,7 +116,8 @@ export default {
     },
     addable () {
       return (this.swatches.length <= this.colorCount)
-    }
+    },
+    ...mapGetters(['userId'])
   },
   watch: {
     'pickerColors': function (val) {
@@ -133,6 +137,7 @@ export default {
       this.errors = []
       const title = this.title
       const colors = this.colorArray
+      const userId = this.userId
       this.validate()
 
       if (this.errors.length === 0) {
@@ -141,7 +146,8 @@ export default {
             mutation: CREATE_PALETTE,
             variables: {
               title,
-              colors
+              colors,
+              userId
             },
             update: (store, { data: { createPalette } }) => {
               const data = store.readQuery({
