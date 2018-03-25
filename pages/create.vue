@@ -3,12 +3,13 @@
     <div class="Color-create">
       <h2>Create new Palette</h2>
       <hr>
-      <label for="create">Palette Name</label>
+      <label for="create">Palette name</label>
       <input
         id="create"
         v-model="title"
         type="text"
-        placeholder="Name your palette"
+        maxlength="30"
+        placeholder="Give your 🎨 a fancy name!"
         name="title"
         class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker"
       >
