@@ -2,7 +2,6 @@
   <div class="Content">
     <div class="Color-create">
       <h2>Create new Palette</h2>
-      <hr>
       <label for="create">Palette name</label>
       <input
         id="create"
