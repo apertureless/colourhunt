@@ -46,8 +46,8 @@ import CREATE_PALETTE from '~/apollo/mutations/CreatePalette'
 import ALL_PALETTES from '~/apollo/queries/AllPalettes'
 import { Chrome as ChromePicker } from 'vue-color'
 import { mixin as clickaway } from 'vue-clickaway'
-import Swatch from '~/components/swatch/ColorSwatch'
-import AddSwatch from '~/components/swatch/AddSwatch'
+const Swatch = () => import(/* webpackChunkName: 'swatch' */'~/components/swatch/ColorSwatch')
+const AddSwatch = ()  => import(/* webpackChunkName: 'add-swatch' */'~/components/swatch/AddSwatch')
 
 let defaultProps = {
   hex: '#194d33',

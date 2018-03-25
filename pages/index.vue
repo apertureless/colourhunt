@@ -16,9 +16,9 @@
 </template>
 
 <script>
-  import ColorPalette from '~/components/color-palette/ColorPalette'
-  import Spinner from '~/components/shared/Spinner'
   import ALL_PALETTES from '~/apollo/queries/AllPalettes'
+  const ColorPalette = () => import(/* webpackChunkName: 'color-palette' */'~/components/color-palette/ColorPalette')
+  const Spinner = () => import(/* webpackChunkName: 'spinner' */'~/components/shared/Spinner')
 
   export default {
     components: { ColorPalette, Spinner },

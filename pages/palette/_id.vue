@@ -18,8 +18,8 @@
 
 <script>
   import PALETTE from '~/apollo/queries/Palette'
-  import ColorPreview from '~/components/color-palette/ColorPreview'
-  import Spinner from '~/components/shared/Spinner'
+  const ColorPreview = () => import(/* webpackChunkName: 'color-preview' */'~/components/color-palette/ColorPreview')
+  const Spinner = () => import(/* webpackChunkName: 'spinner' */'~/components/shared/Spinner')
 
 
   export default {

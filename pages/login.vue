@@ -59,8 +59,8 @@
 
 <script>
   import { mapActions, mapGetters } from 'vuex'
-  import Password from 'vue-password-strength-meter'
-  import Spinner from '~/components/shared/Spinner'
+  const Password = () =>  import(/* webpackChunkName: 'vue-password' */'vue-password-strength-meter')
+  const Spinner = () => import(/* webpackChunkName: 'spinner' */'~/components/shared/Spinner')
 
   export default {
     name: 'Login',
