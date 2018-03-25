@@ -4,7 +4,7 @@
       class="login-form"
       @submit.prevent="submit()">
       <fieldset>
-        <legend>{{canLogin ? 'Login' : 'Sign Up'}}</legend>
+        <legend>{{canLogin ? 'Login' : 'Create Account'}}</legend>
         <Spinner
           v-if="loading"
           :margin="0"

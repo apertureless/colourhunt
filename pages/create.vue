@@ -34,6 +34,17 @@
           class="Color__picker"
         />
       </div>
+      <ul
+          v-if="errors"
+          class="alert is-error"
+        >
+          <li
+            v-for="(error, index) in errors"
+            :key="index"
+            class="alert-item">
+              🚫 {{ error }}
+            </li>
+        </ul>
       <button
         class="button"
         @click="create()">Create Palette</button>
@@ -78,6 +89,7 @@ export default {
   data () {
     return {
       title: '',
+      errors: [],
       currentIndex: 0,
       colorCount: 4,
       showPicker: false,
@@ -108,34 +120,46 @@ export default {
     }
   },
   methods: {
+    validate () {
+      if (this.title === '') {
+        this.errors.push('📝 Please add a title')
+      }
+      if (this.colorArray.length <= 1) {
+        this.errors.push('🎨 Please add at least two colors')
+      }
+    },
     create () {
+      this.errors = []
       const title = this.title
       const colors = this.colorArray
+      this.validate()
 
-      this.$apollo
-        .mutate({
-          mutation: CREATE_PALETTE,
-          variables: {
-            title,
-            colors
-          },
-          update: (store, { data: { createPalette } }) => {
-            const data = store.readQuery({
-              query: ALL_PALETTES
-            })
-            data.allPalettes.push(createPalette)
-            store.writeQuery({
-              query: ALL_PALETTES,
-              data
-            })
-          }
-        })
-        .then(data => {
-          this.$router.push({path: '/'})
-        })
-        .catch(error => {
-          console.error(error)
-        })
+      if (this.errors.length === 0) {
+        this.$apollo
+          .mutate({
+            mutation: CREATE_PALETTE,
+            variables: {
+              title,
+              colors
+            },
+            update: (store, { data: { createPalette } }) => {
+              const data = store.readQuery({
+                query: ALL_PALETTES
+              })
+              data.allPalettes.push(createPalette)
+              store.writeQuery({
+                query: ALL_PALETTES,
+                data
+              })
+            }
+          })
+          .then(data => {
+            this.$router.push({path: '/'})
+          })
+          .catch(error => {
+            console.error(error)
+          })
+      }
     },
     addColor () {
       this.swatches.push({color: '#f1f1f1'})
