@@ -5,11 +5,15 @@
       @submit.prevent="submit()">
       <fieldset>
         <legend>{{canLogin ? 'Login' : 'Sign Up'}}</legend>
+        <Spinner
+          v-if="loading"
+          :margin="0"
+        />
         <label for="email">E-Mail</label>
         <input
           id="email"
           v-model="email"
-          type="text"
+          type="email"
           required
           placeholder="Your email address">
         <label for="password">Password</label>
@@ -18,11 +22,25 @@
           id="password"
           v-model="password"
           type="password"
+          autocomplete="current-password"
           required
           placeholder="Your password">
         <Password
           v-else
-          v-model="password" />
+          placeholder="Please choose a secure password"
+          v-model="password"
+        />
+        <ul
+          v-if="authErrors"
+          class="alert is-error"
+        >
+          <li
+            v-for="(error, index) in authErrors"
+            :key="index"
+            class="alert-item">
+              🚫 {{ error }}
+            </li>
+        </ul>
         <button
           class='button'
           type="submit"
@@ -32,7 +50,7 @@
         <button
           class="button-clean"
           @click.prevent="canLogin = !canLogin">
-          {{canLogin ? 'need to create an account?' : 'already have an account?'}}
+          {{canLogin ? 'Need to create an account?' : 'Already have an account?'}}
         </button>
       </fieldset>
     </form>
@@ -40,35 +58,42 @@
 </template>
 
 <script>
-  import { mapActions } from 'vuex'
+  import { mapActions, mapGetters } from 'vuex'
   import Password from 'vue-password-strength-meter'
+  import Spinner from '~/components/shared/Spinner'
 
   export default {
     name: 'Login',
-    components: { Password },
+    components: { Password, Spinner },
     data: () => ({
       canLogin: true,
       email: '',
-      password: ''
+      password: '',
+      loading: false
     }),
+    computed: mapGetters(['authErrors']),
     methods: {
       ...mapActions(['login', 'signup']),
       async submit () {
         const { email, password } = this.$data
+        this.loading = true
         if (this.canLogin) {
           try {
             await this.login({email, password})
+            this.loading = false
+            this.$router.push({path: '/'})
           } catch (err) {
-            console.error(err)
+            this.loading = false
           }
         } else {
           try {
             await this.signup({email, password})
+            this.loading = false
+            this.$router.push({path: '/'})
           } catch (err) {
-            console.error(err)
+            this.loading = false
           }
         }
-        this.$router.push({path: '/'})
       }
     }
   }
@@ -84,6 +109,6 @@
 }
 
 .Password__badge {
-  bottom: rem(48);
+  bottom: rem(48) !important;
 }
 </style>

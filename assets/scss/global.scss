@@ -116,3 +116,19 @@ fieldset {
     text-align: center;
   }
 }
+
+
+.alert {
+  padding: 0;
+  list-style: none;
+  border-left: rem(4) solid currentColor;
+
+  &.is-error {
+    color: red;
+  }
+}
+
+.alert-item {
+  font-weight: bold;
+  margin-left: rem(8);
+}

@@ -1,5 +1,7 @@
 <template>
-  <div class="spinner">
+  <div
+    :style="{margin: margin + 'px auto' }"
+    class="spinner">
     <div class="rect1"></div>
     <div class="rect2"></div>
     <div class="rect3"></div>
@@ -10,6 +12,13 @@
 
 <script>
   export default {
+    name: 'Spinner',
+    props: {
+      margin: {
+        type: Number,
+        default: 100
+      }
+    }
   }
 </script>
 
@@ -17,7 +26,6 @@
   @import "~assets/scss/includes.scss";
 
   .spinner {
-    margin: 100px auto;
     width: 50px;
     height: 40px;
     text-align: center;

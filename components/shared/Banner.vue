@@ -2,23 +2,39 @@
   <header class="Header">
     <div class="Header__content">
       <router-link to="/">
-        <h1 class="Header__logo">Colour Hunt</h1>
+        <h1 class="Header__logo">Colour Hunt<span>Alpha</span></h1>
       </router-link>
       <div class="Header__nav">
         <router-link
           to="/create"
           class="button">Create</router-link>
         <router-link
+          v-if="!isLoggedIn"
           to="/login"
           class="button">Login</router-link>
+          <button
+            v-else
+            class="button"
+            @click="logoutUser()"
+          >Logout</button>
       </div>
     </div>
   </header>
 </template>
 
 <script>
+  import { mapGetters, mapActions } from 'vuex'
+
   export default {
-    name: 'Banner'
+    name: 'Banner',
+    computed: mapGetters(['isLoggedIn']),
+    methods: {
+      ...mapActions(['logout']),
+      logoutUser () {
+        this.logout()
+        this.$router.push({path: '/login'})
+      }
+    }
   }
 </script>
 
@@ -42,6 +58,11 @@
     @include has(logo) {
       color: color(highlight);
       font-size: rem(18);
+
+      span {
+        font-size: rem(11);
+        margin-left: rem(8);
+      }
     }
   }
 </style>

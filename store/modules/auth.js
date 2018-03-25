@@ -4,6 +4,7 @@ import CREATE_USER from '~/apollo/mutations/CreateUser.gql'
 import LOGIN_USER from '~/apollo/mutations/LoginUser.gql'
 
 import { GC_USER_ID, GC_AUTH_TOKEN } from '~/constants/settings'
+import { graphQLErrorMessages } from '~/utils/'
 
 const state = {
   isLoggedIn: !!localStorage.getItem(GC_USER_ID),
@@ -32,8 +33,9 @@ const actions = {
       localStorage.setItem(GC_AUTH_TOKEN, token)
       commit(types.LOGIN_SUCCESS, id)
     } catch (err) {
-      console.error(err)
-      commit(types.LOGIN_FAILED, err)
+      const prettyError = graphQLErrorMessages(err)
+      commit(types.LOGIN_FAILED, prettyError)
+      throw new Error(prettyError)
     }
   },
   async signup ({commit}, credentials) {
@@ -57,8 +59,9 @@ const actions = {
       localStorage.setItem(GC_AUTH_TOKEN, token)
       commit(types.SIGNUP_SUCCESS, id)
     } catch (err) {
-      console.error(err)
-      commit(types.SIGNUP_FAILED, err)
+      const prettyError = graphQLErrorMessages(err)
+      commit(types.SIGNUP_FAILED, prettyError)
+      throw new Error(prettyError)
     }
 
   },
