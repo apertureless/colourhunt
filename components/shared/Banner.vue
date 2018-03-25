@@ -6,6 +6,7 @@
       </router-link>
       <div class="Header__nav">
         <router-link
+          v-if="isLoggedIn"
           to="/create"
           class="button">Create</router-link>
         <router-link

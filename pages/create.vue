@@ -85,6 +85,7 @@ let defaultProps = {
 
 export default {
   mixins: [clickaway],
+  middleware: 'auth',
   components: { Swatch, AddSwatch, ChromePicker },
   data () {
     return {
