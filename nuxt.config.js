@@ -4,7 +4,10 @@ module.exports = {
   css: [
     '~/assets/scss/global.scss'
   ],
-  modules: ['@nuxtjs/apollo'],
+  modules: [
+    '@nuxtjs/apollo',
+    '@nuxtjs/pwa'
+  ],
   apollo: {
     clientConfigs: {
       default: '~/apollo/client-configs/default.js'
@@ -18,10 +21,17 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Community driven color palettes' }
+      { hid: 'description', name: 'description', content: 'Colour Hunt is a community driven color palette collection' },
+      { name: 'msapplication-TileColor', content: '#fc136d'},
+      { name: 'msapplication-TileImage', content: '/mstile-144x144.png'},
+      { name: 'theme-color', content: '#fc136d'}
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
+      { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
+      { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
+      { rel: 'manifest', href: '/site.webmanifest' },
+      { rel: 'mask-icon', color: '#fc136d', href: '/safari-pinned-tab.svg' }
     ]
   },
   /*
