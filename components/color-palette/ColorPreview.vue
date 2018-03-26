@@ -55,6 +55,13 @@
     display: flex;
     align-items: flex-end;
     transition: all .2s ease-in;
+    &:first-child {
+      border-top-left-radius: $base-border-radius;
+    }
+
+    &:last-child {
+      border-top-right-radius: $base-border-radius;
+    }
 
     &:hover {
       flex: 3;
