@@ -11,3 +11,58 @@ export const graphQLErrorMessages = (errorsFromCatch) => {
 
   return messages
 }
+
+
+const scss = (colors) => {
+  return `
+    ${colors.map((color, i) => `
+      $color-${i}: ${color};
+    `).join('')}
+  `
+}
+
+const sass = (colors) => {
+  return `
+    ${colors.map((color, i) => `
+      $color-${i}: ${color}
+    `).join('')}
+  `
+}
+
+const less = (colors) => {
+  return `
+    ${colors.map((color, i) => `
+      @color-${i}: ${color};
+    `).join('')}
+  `
+}
+
+const css = (colors) => {
+  return `
+    :root {
+      ${colors.map((color, i) => `
+        --color-${i}: ${color};
+      `).join('')}
+    }
+  `
+}
+
+export const colorCode = ({type, colors}) => {
+  let code
+  switch (type) {
+    case 'scss':
+      code = scss(colors)
+      break
+    case 'sass':
+      code = sass(colors)
+      break
+    case 'less':
+      code = less(colors)
+      break
+    case 'css':
+      code = css(colors)
+      break
+  }
+
+  return code
+}

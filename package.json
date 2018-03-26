@@ -23,10 +23,13 @@
     "graphql": "^0.13.2",
     "graphql-tag": "^2.8.0",
     "nuxt": "^1.0.0",
+    "prismjs": "^1.13.0",
     "vue-apollo": "^3.0.0-beta.5",
     "vue-clickaway": "^2.1.0",
     "vue-color": "^2.4.5",
     "vue-password-strength-meter": "^1.1.1",
+    "vue-prism-component": "^1.0.1",
+    "vue-tabs-component": "^1.4.0",
     "zxcvbn": "^4.4.2"
   },
   "devDependencies": {
