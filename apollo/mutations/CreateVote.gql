@@ -1,0 +1,16 @@
+mutation createVote($userId: ID!, $paletteId: ID!) {
+  createVote(userId: $userId, paletteId: $paletteId) {
+    id
+    palette {
+      votes {
+        id
+        user {
+          id
+        }
+      }
+    }
+    user {
+      id
+    }
+  }
+}

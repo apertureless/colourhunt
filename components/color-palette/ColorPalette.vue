@@ -15,7 +15,8 @@
     <div class="Color-palette__meta">
       <upvote-button
         :id="colorpalette.id"
-        :upvotes="colorpalette.upvotes"/>
+        :votes="colorpalette.votes"
+      />
     </div>
   </div>
 </template>

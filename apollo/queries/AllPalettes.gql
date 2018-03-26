@@ -1,8 +1,13 @@
 query allPalettes {
-  allPalettes(orderBy: upvotes_DESC) {
+  allPalettes(orderBy: createdAt_DESC) {
     id
     title
-    upvotes
     colors
+    votes {
+      id
+      user {
+        id
+      }
+    }
   }
 }
