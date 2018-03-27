@@ -12,6 +12,7 @@
 <script>
   import CREATE_VOTE from '~/apollo/mutations/CreateVote'
   import ALL_PALETTES from '~/apollo/queries/AllPalettes'
+  import { PALETTES_PER_PAGE } from '~/constants/settings'
   import { mapGetters } from 'vuex'
 
   export default {
@@ -69,7 +70,12 @@
       },
       updateStoreAfterVote (store, createVote, paletteId) {
         const data = store.readQuery({
-          query: ALL_PALETTES
+          query: ALL_PALETTES,
+          variables: {
+            first: PALETTES_PER_PAGE,
+            skip: 0,
+            orderBy: 'createdAt_DESC'
+          }
         })
         const votedPalette = data.allPalettes.find(palette => palette.id === paletteId)
         votedPalette.votes = createVote.palette.votes

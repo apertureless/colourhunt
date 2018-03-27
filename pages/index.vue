@@ -1,24 +1,34 @@
 <template>
   <div class="Content">
     <div class="Content__list">
-      <template v-if="loading > 0">
-        <spinner />
-      </template>
-      <template v-else>
-        <color-palette
-          v-for="palette in allPalettes"
-          :key="palette.id"
-          :colorpalette='palette'
-        />
-      </template>
+      <color-palette
+        v-for="(palette, index) in allPalettes"
+        :key="index"
+        :colorpalette='palette'
+      />
+    </div>
+    <div class="Content__footer">
+      <spinner
+        v-if="loading > 0"
+        :margin="0"
+      />
+      <button
+        v-if="morePalettes"
+        class="button"
+        @click="loadMore()">
+        {{ loading ? 'Loading ...' : 'Show more'}}
+      </button>
     </div>
   </div>
 </template>
 
 <script>
   import ALL_PALETTES from '~/apollo/queries/AllPalettes'
+  import { PALETTES_PER_PAGE } from '~/constants/settings'
   const ColorPalette = () => import(/* webpackChunkName: 'color-palette' */'~/components/color-palette/ColorPalette')
   const Spinner = () => import(/* webpackChunkName: 'spinner' */'~/components/shared/Spinner')
+
+
 
   export default {
     components: { ColorPalette, Spinner },
@@ -48,13 +58,48 @@
     data () {
       return {
         allPalettes: {},
+        totalCount: {
+          count: 0
+        },
         loading: 0
+      }
+    },
+    computed: {
+      morePalettes () {
+        return this.allPalettes.length < this.totalCount.count
       }
     },
     apollo: {
       allPalettes: {
         query: ALL_PALETTES,
-        loadingKey: 'loading'
+        variables: {
+          skip: 0,
+          first: PALETTES_PER_PAGE,
+          orderBy: 'createdAt_DESC'
+        },
+        loadingKey: 'loading',
+        result ({data}) {
+          this.totalCount = data.totalCount
+        }
+      }
+    },
+
+    methods: {
+      loadMore () {
+        this.$apollo.queries.allPalettes.fetchMore({
+          variables: {
+            skip: this.allPalettes.length
+          },
+          updateQuery: (previousResult, { fetchMoreResult }) => {
+            if (!fetchMoreResult) {
+              return previousResult
+            }
+            return Object.assign({}, previousResult, {
+              // Append the new posts results to the old one
+              allPalettes: [...previousResult.allPalettes, ...fetchMoreResult.allPalettes]
+            })
+          }
+        })
       }
     }
   }

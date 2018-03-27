@@ -74,6 +74,13 @@ a {
     display: flex;
     flex-flow: row wrap;
   }
+
+  @include has(footer) {
+    > .button {
+      display: block;
+      margin: rem(16) auto;
+    }
+  }
 }
 
 

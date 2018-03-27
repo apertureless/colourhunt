@@ -55,6 +55,7 @@
 <script>
 import { Chrome as ChromePicker } from 'vue-color'
 import { mixin as clickaway } from 'vue-clickaway'
+import { PALETTES_PER_PAGE } from '~/constants/settings'
 
 import CREATE_PALETTE from '~/apollo/mutations/CreatePalette'
 import ALL_PALETTES from '~/apollo/queries/AllPalettes'
@@ -151,11 +152,21 @@ export default {
             },
             update: (store, { data: { createPalette } }) => {
               const data = store.readQuery({
-                query: ALL_PALETTES
+                query: ALL_PALETTES,
+                variables: {
+                  first: PALETTES_PER_PAGE,
+                  skip: 0,
+                  orderBy: 'createdAt_DESC'
+                }
               })
               data.allPalettes.push(createPalette)
               store.writeQuery({
                 query: ALL_PALETTES,
+                variables: {
+                  first: PALETTES_PER_PAGE,
+                  skip: 0,
+                  orderBy: 'createdAt_DESC'
+                },
                 data
               })
             }

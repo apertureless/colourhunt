@@ -1,5 +1,5 @@
-query allPalettes {
-  allPalettes(orderBy: createdAt_DESC) {
+query allPalettes ($first: Int, $skip: Int, $orderBy: PaletteOrderBy) {
+  allPalettes(first: $first, skip: $skip, orderBy: $orderBy) {
     id
     title
     colors
@@ -9,5 +9,8 @@ query allPalettes {
         id
       }
     }
+  }
+  totalCount: _allPalettesMeta {
+    count
   }
 }

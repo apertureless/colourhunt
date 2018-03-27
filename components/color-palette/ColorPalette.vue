@@ -1,4 +1,5 @@
 <template>
+<transition name="slide-fade">
   <div class="Color-palette">
     <router-link
       :to="`/palette/${colorpalette.id}`"
@@ -19,6 +20,7 @@
       />
     </div>
   </div>
+  </transition>
 </template>
 
 <script>
@@ -90,4 +92,17 @@
     }
   }
 
+/* Enter and leave animations can use different */
+/* durations and timing functions.              */
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: scale3d(0, 0, 0);
+  opacity: 0;
+}
 </style>
