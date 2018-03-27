@@ -4,6 +4,7 @@ module.exports = {
   mode: 'spa',
   extractCSS: true,
   css: [
+    'node_modules/modern-normalize/modern-normalize.css',
     '~/assets/scss/global.scss'
   ],
   modules: [
