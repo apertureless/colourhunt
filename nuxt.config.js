@@ -62,6 +62,11 @@ module.exports = {
       { rel: 'mask-icon', color: '#fc136d', href: '/safari-pinned-tab.svg' }
     ]
   },
+  meta: {
+    name: '🎨 Colour Hunt | Community driven color palettes',
+    ogHost: 'https://www.colourhunt.com',
+    ogImage: '/images/colourhunt-twitter.png'
+  },
   /*
   ** Customize the progress bar color
   */
