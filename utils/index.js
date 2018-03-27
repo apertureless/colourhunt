@@ -14,37 +14,24 @@ export const graphQLErrorMessages = (errorsFromCatch) => {
 
 
 const scss = (colors) => {
-  return `
-    ${colors.map((color, i) => `
-      $color-${i}: ${color};
-    `).join('')}
-  `
+  return `${colors.map((color, i) => `$color-${i}: ${color};
+`).join('')}`
 }
 
 const sass = (colors) => {
-  return `
-    ${colors.map((color, i) => `
-      $color-${i}: ${color}
-    `).join('')}
-  `
+  return `${colors.map((color, i) => `$color-${i}: ${color}
+`).join('')}`
 }
 
 const less = (colors) => {
-  return `
-    ${colors.map((color, i) => `
-      @color-${i}: ${color};
-    `).join('')}
-  `
+  return `${colors.map((color, i) => `@color-${i}: ${color};
+`).join('')}`
 }
 
 const css = (colors) => {
-  return `
-    :root {
-      ${colors.map((color, i) => `
-        --color-${i}: ${color};
-      `).join('')}
-    }
-  `
+  return `:root {
+${colors.map((color, i) => `  --color-${i}: ${color};
+`).join('')}}`
 }
 
 export const colorCode = ({type, colors}) => {
