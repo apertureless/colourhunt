@@ -1,7 +1,7 @@
 {
-  "name": "colourhunt",
-  "version": "1.2.0",
-  "description": "Nuxt.js project",
+  "name": "colorhunt",
+  "version": "1.4.0",
+  "description": "🎨 Colour Hunt is a community driven color palette collection. Grab beautiful color palettes for your next project.",
   "author": "Jakub Juszczak <netghost03@gmail.com>",
   "private": true,
   "scripts": {

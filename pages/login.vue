@@ -64,6 +64,7 @@
 
   export default {
     name: 'Login',
+    middleware: 'no-auth',
     components: { Password, Spinner },
     data: () => ({
       canLogin: true,
