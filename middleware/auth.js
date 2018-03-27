@@ -1,8 +1,5 @@
-export default function ({ store, error }) {
+export default function ({ store, redirect }) {
   if (!store.state.auth.isLoggedIn) {
-    error({
-      message: 'You are not logged in.',
-      statusCode: 403
-    })
+    return redirect('/login')
   }
 }
