@@ -25,6 +25,7 @@
     border-radius: rem(5);
     border: 4px #f1f1f1 dotted;
     font-size: 65px;
+    line-height: 1.1;
     text-align: center;
     color: #f1f1f1;
     cursor: pointer;
