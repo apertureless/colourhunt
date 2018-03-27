@@ -45,11 +45,11 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'Colour Hunt',
+    title: 'Colour Hunt | Beautiful color palettes for your next project!',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Colour Hunt is a community driven color palette collection' },
+      { hid: 'description', name: 'description', content: '🎨 Colour Hunt is a community driven color palette collection. Grab beautiful color palettes for your next project.' },
       { name: 'msapplication-TileColor', content: '#fc136d'},
       { name: 'msapplication-TileImage', content: '/mstile-144x144.png'},
       { name: 'theme-color', content: '#fc136d'}
