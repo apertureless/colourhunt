@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.3.0"></a>
+# [1.3.0](https://github.com/apertureless/colourhunt/compare/v1.2.0...v1.3.0) (2018-03-27)
+
+
+### Bug Fixes
+
+* **add-swatch:** Fix line-height to align the plus sign ([36fb4b7](https://github.com/apertureless/colourhunt/commit/36fb4b7))
+* **button:** Remove background color of clean button ([a6c616c](https://github.com/apertureless/colourhunt/commit/a6c616c))
+* **code-preview:** Fix code preview formatting ([7221b87](https://github.com/apertureless/colourhunt/commit/7221b87))
+* **color-preview:** Fix border radius on detail page ([f2c9772](https://github.com/apertureless/colourhunt/commit/f2c9772))
+* **create:** Add character limitation for palette name ([690c6ea](https://github.com/apertureless/colourhunt/commit/690c6ea))
+* **style:** Add normalize css ([c763c7e](https://github.com/apertureless/colourhunt/commit/c763c7e))
+
+
+### Features
+
+* **code-preview:** Add code preview section ([2a881ec](https://github.com/apertureless/colourhunt/commit/2a881ec))
+* **voting:** Add user voting ([0dc95d2](https://github.com/apertureless/colourhunt/commit/0dc95d2))
+
+
+
 <a name="1.2.0"></a>
 # [1.2.0](https://github.com/apertureless/colourhunt/compare/v1.1.0...v1.2.0) (2018-03-25)
 
