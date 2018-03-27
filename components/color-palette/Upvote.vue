@@ -12,6 +12,7 @@
 <script>
   import CREATE_VOTE from '~/apollo/mutations/CreateVote'
   import ALL_PALETTES from '~/apollo/queries/AllPalettes'
+  import { PALETTES_PER_PAGE } from '~/constants/settings'
   import { mapGetters } from 'vuex'
 
   export default {
@@ -71,7 +72,7 @@
         const data = store.readQuery({
           query: ALL_PALETTES,
           variables: {
-            first: 5,
+            first: PALETTES_PER_PAGE,
             skip: 0,
             orderBy: 'createdAt_DESC'
           }
