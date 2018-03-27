@@ -22,7 +22,16 @@
 
   export default {
     components: { ColorPalette, Spinner },
-    props: {},
+    head: {
+      meta: [
+        { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:site', content: '@apertureless' },
+        { name: 'twitter:title', content: '🎨 Colour Hunt | Community driven color palettes' },
+        { name: 'twitter:description', content: '🎨 Colour Hunt is a community driven color palette collection. Grab beautiful color palettes for your next project.' },
+        { name: 'twitter:image', content: '~/assets/imgages/colourhunt-twitter.png' },
+        { name: 'twitter:image:alt', content: 'colourhunt.com' }
+      ]
+    },
     data () {
       return {
         allPalettes: {},
