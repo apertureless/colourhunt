@@ -151,11 +151,21 @@ export default {
             },
             update: (store, { data: { createPalette } }) => {
               const data = store.readQuery({
-                query: ALL_PALETTES
+                query: ALL_PALETTES,
+                variables: {
+                  first: 5,
+                  skip: 0,
+                  orderBy: 'createdAt_DESC'
+                }
               })
               data.allPalettes.push(createPalette)
               store.writeQuery({
                 query: ALL_PALETTES,
+                variables: {
+                  first: 5,
+                  skip: 0,
+                  orderBy: 'createdAt_DESC'
+                },
                 data
               })
             }

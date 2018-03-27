@@ -69,7 +69,12 @@
       },
       updateStoreAfterVote (store, createVote, paletteId) {
         const data = store.readQuery({
-          query: ALL_PALETTES
+          query: ALL_PALETTES,
+          variables: {
+            first: 5,
+            skip: 0,
+            orderBy: 'createdAt_DESC'
+          }
         })
         const votedPalette = data.allPalettes.find(palette => palette.id === paletteId)
         votedPalette.votes = createVote.palette.votes
