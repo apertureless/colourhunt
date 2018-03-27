@@ -65,7 +65,9 @@ module.exports = {
   meta: {
     name: '🎨 Colour Hunt | Community driven color palettes',
     ogHost: 'https://www.colourhunt.com',
-    ogImage: '/images/colourhunt-twitter.png'
+    ogImage: {
+      path: '/images/colourhunt-twitter.png'
+    }
   },
   /*
   ** Customize the progress bar color
