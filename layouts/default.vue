@@ -2,7 +2,6 @@
   <div>
     <Banner/>
     <nuxt/>
-    <!-- <FeedbackButton /> -->
     <no-ssr>
       <cookie-law/>
     </no-ssr>
@@ -12,9 +11,8 @@
 <script>
   import Banner from '~/components/shared/Banner'
   import CookieLaw from 'vue-cookie-law'
-  const FeedbackButton = () => import('~/components/shared/FeedbackButton')
 
   export default {
-    components: { Banner, FeedbackButton, CookieLaw }
+    components: { Banner, CookieLaw }
   }
 </script>
