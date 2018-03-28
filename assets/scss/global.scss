@@ -103,6 +103,19 @@ input {
   display: block;
 }
 
+textarea {
+  display: block;
+  background-color: #f1f1f1;
+  border: 1px solid #f1f1f1;
+  border-radius: rem(2);
+  box-sizing: border-box;
+  font-size: rem(14);
+  padding: rem(13);
+  width: 100%;
+  margin-bottom: rem(16);
+  resize: vertical;
+}
+
 .card {
   border-radius: $base-border-radius;
   background: color(background-light);
