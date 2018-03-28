@@ -20,10 +20,10 @@
             type="text"
             placeholder="Your name (optional)"
           >
-          <label for="name">Feedback / Feature Request / Bug Report</label>
+          <label for="userfeedback">Feedback / Feature Request / Bug Report</label>
           <textarea
-            name="feedback"
-            id="feedback"
+            name="userfeedback"
+            id="userfeedback"
             cols="30"
             rows="10"></textarea>
           <input type="hidden" name="form-name" value="feedback" />
@@ -42,12 +42,6 @@
 
 <script>
   export default {
-    props: {},
-    data () {
-      return {
-
-      }
-    }
   }
 </script>
 
