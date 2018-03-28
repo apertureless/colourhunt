@@ -1,55 +1,63 @@
 <template>
   <div class="Content">
-    <div class="Color-create">
-      <h2>Create new Palette</h2>
-      <label for="create">Palette name</label>
-      <input
-        id="create"
-        v-model="title"
-        type="text"
-        maxlength="30"
-        placeholder="Give your 🎨 a fancy name!"
-        name="title"
-        class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker"
-      >
-      <div class="Color__list">
-        <swatch
-          v-for="(swatch, index) in swatches"
-          :key="index"
-          :color="swatch.color"
-          @remove="removeColor(index)"
-          @picker="openPicker(index, $event)"
-        />
-
-        <add-swatch
-          v-if="addable"
-          @increment="addColor()"
-        />
-
-        <chrome-picker
-          v-if="showPicker"
-          v-model="pickerColors"
-          v-on-clickaway="closePicker"
-          :style="{ left: swatchOffset.left + 'px', top: swatchOffset.top + 'px' }"
-          class="Color__picker"
-        />
+    <div class="Color-detail">
+      <div class="Color-detail__header">
+        <color-preview
+          :colors="colorArray"
+          :height="200"/>
       </div>
-      <ul
-          v-if="errors"
-          class="alert is-error"
+      <div class="Color-detail__content">
+        <h2>Create new Palette</h2>
+        <label for="create">Palette name</label>
+        <input
+          id="create"
+          v-model="title"
+          type="text"
+          maxlength="30"
+          placeholder="Give your 🎨 a fancy name!"
+          name="title"
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker"
         >
-          <li
-            v-for="(error, index) in errors"
+        <div class="Color__list">
+          <swatch
+            v-for="(swatch, index) in swatches"
             :key="index"
-            class="alert-item">
-              🚫 {{ error }}
-            </li>
-        </ul>
-      <button
-        class="button"
-        @click="create()">Create Palette</button>
+            :color="swatch.color"
+            @remove="removeColor(index)"
+            @picker="openPicker(index, $event)"
+          />
+
+          <add-swatch
+            v-if="addable"
+            @increment="addColor()"
+          />
+
+          <chrome-picker
+            v-if="showPicker"
+            v-model="pickerColors"
+            v-on-clickaway="closePicker"
+            :style="{ left: swatchOffset.left + 'px', top: swatchOffset.top + 'px' }"
+            class="Color__picker"
+          />
+        </div>
+        <ul
+            v-if="errors"
+            class="alert is-error"
+          >
+            <li
+              v-for="(error, index) in errors"
+              :key="index"
+              class="alert-item">
+                🚫 {{ error }}
+              </li>
+          </ul>
+        <button
+          class="button"
+          @click="create()">Create Palette</button>
+      </div>
+      </div>
     </div>
-  </div>
+
 </template>
 
 <script>
@@ -63,6 +71,7 @@ import ALL_PALETTES from '~/apollo/queries/AllPalettes'
 import { mapGetters } from 'vuex'
 const Swatch = () => import(/* webpackChunkName: 'swatch' */'~/components/swatch/ColorSwatch')
 const AddSwatch = ()  => import(/* webpackChunkName: 'add-swatch' */'~/components/swatch/AddSwatch')
+const ColorPreview = () => import(/* webpackChunkName: 'color-preview' */'~/components/color-palette/ColorPreview')
 
 let defaultProps = {
   hex: '#194d33',
@@ -90,7 +99,7 @@ let defaultProps = {
 export default {
   mixins: [clickaway],
   middleware: 'auth',
-  components: { Swatch, AddSwatch, ChromePicker },
+  components: { Swatch, AddSwatch, ChromePicker, ColorPreview },
   data () {
     return {
       title: '',

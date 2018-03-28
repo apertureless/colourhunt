@@ -11,23 +11,23 @@
           <spinner />
         </span>
         <h1 class="Color-detail__title">{{Palette.title}}</h1>
-        <tabs>
-          <tab name="SCSS">
+        <tabs :options="{ useUrlFragment: false }">
+          <tab name="SCSS" >
             <CodePreview
               lang="scss"
               :colors="Palette.colors"/>
           </tab>
-          <tab name="Sass">
+          <tab name="Sass" >
             <CodePreview
               lang="sass"
               :colors="Palette.colors"/>
           </tab>
-          <tab name="Less">
+          <tab name="Less" >
             <CodePreview
               lang="less"
               :colors="Palette.colors"/>
           </tab>
-          <tab name="CSS">
+          <tab name="CSS" >
             <CodePreview
               lang="css"
               :colors="Palette.colors"/>
@@ -36,7 +36,6 @@
             name="Sketch"
             :is-disabled="true"
             prefix="🔜"
-            :options="{ useUrlFragment: false }"
           >
             Coming Soon
           </tab>
@@ -86,27 +85,6 @@
 
 <style lang="scss">
   @import "~assets/scss/includes.scss";
-
-  .Color-detail {
-    background: color(background-light);
-    border-radius: $base-border-radius;
-    border: 1px solid color(border-color);
-    margin: rem(10);
-    margin-top: rem(50);
-
-    @include has(header) {
-
-    }
-
-    @include has(title) {
-      color: color(text-color);
-      font-size: rem(20);
-    }
-
-    @include has(content) {
-      padding: rem(30);
-    }
-  }
 
   .tabs-component {
     margin: 4em 0;

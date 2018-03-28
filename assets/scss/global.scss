@@ -140,3 +140,25 @@ fieldset {
   font-weight: bold;
   margin-left: rem(8);
 }
+
+
+.Color-detail {
+  background: color(background-light);
+  border-radius: $base-border-radius;
+  border: 1px solid color(border-color);
+  margin: rem(10);
+  margin-top: rem(50);
+
+  @include has(header) {
+
+  }
+
+  @include has(title) {
+    color: color(text-color);
+    font-size: rem(20);
+  }
+
+  @include has(content) {
+    padding: rem(30);
+  }
+}
