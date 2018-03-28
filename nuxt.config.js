@@ -9,7 +9,10 @@ module.exports = {
   ],
   modules: [
     '@nuxtjs/apollo',
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-92766713-3'
+    }]
   ],
   apollo: {
     clientConfigs: {

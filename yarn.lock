@@ -84,6 +84,12 @@
     isomorphic-fetch "^2.2.1"
     vue-apollo "^3.0.0-beta.5"
 
+"@nuxtjs/google-analytics@^2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/google-analytics/-/google-analytics-2.0.2.tgz#75353143628fd7697b41eb5aa7da38a513394eca"
+  dependencies:
+    vue-analytics "^5.4.0"
+
 "@nuxtjs/icon@^2.1.0":
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/@nuxtjs/icon/-/icon-2.1.0.tgz#d06ff69778d54a65506a39862fe12ab2bba627b5"
@@ -7224,6 +7230,10 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
+vue-analytics@^5.4.0:
+  version "5.9.1"
+  resolved "https://registry.yarnpkg.com/vue-analytics/-/vue-analytics-5.9.1.tgz#3ac9810f56dbe54bca4fd1c3ee42354b433d932b"
+
 vue-apollo@^3.0.0-beta.5:
   version "3.0.0-beta.5"
   resolved "https://registry.yarnpkg.com/vue-apollo/-/vue-apollo-3.0.0-beta.5.tgz#d0aabd19683e50cd1ab2d24e2827e8fb579ff78e"
@@ -7245,6 +7255,10 @@ vue-color@^2.4.5:
     lodash.throttle "^4.0.0"
     material-colors "^1.0.0"
     tinycolor2 "^1.1.2"
+
+vue-cookie-law@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/vue-cookie-law/-/vue-cookie-law-1.4.0.tgz#dfa278ff8242f77660b25b73190d0514ca11915f"
 
 vue-eslint-parser@^2.0.3:
   version "2.0.3"
