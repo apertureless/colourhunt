@@ -2,10 +2,10 @@
   <div
     class="Swatch"
     :style="{backgroundColor: color}"
-    @click="openPicker">
+    @click.self="openPicker">
     <span
       class="close"
-      @click="remove()">✖</span>
+      @click.self="remove()">✖</span>
   </div>
 </template>
 
@@ -17,11 +17,7 @@
         default: '#f1f1f1'
       }
     },
-    data () {
-      return {
 
-      }
-    },
     methods: {
       remove () {
         this.$emit('remove')
