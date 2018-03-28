@@ -5,7 +5,7 @@
     class="Color-palette__upvotes button button--small"
     @click="upvotePalette()"
   >
-    {{ votes.length }}
+    ▲ {{ votes.length }}
   </div>
 </template>
 
