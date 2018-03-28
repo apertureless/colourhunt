@@ -2,7 +2,7 @@
   <div>
     <Banner/>
     <nuxt/>
-    <FeedbackButton />
+    <!-- <FeedbackButton /> -->
     <no-ssr>
       <cookie-law/>
     </no-ssr>
