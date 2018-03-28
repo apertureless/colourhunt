@@ -2,7 +2,7 @@
   <div class="card center-small">
     <form
       name="feedback"
-      action=""
+      action="/thanks"
       method="post"
       netlify-honeypot="bot-field"
       netlify>
