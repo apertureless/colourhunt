@@ -2,10 +2,8 @@
   <div class="card center-small">
     <form
       name="feedback"
-      action="/thanks"
-      method="post"
-      netlify-honeypot="bot-field"
-      netlify>
+      @submit.prevent="submit()"
+    >
       <fieldset>
         <legend>Feedback</legend>
         <label for="email">E-Mail</label>
@@ -13,23 +11,23 @@
           id="email"
           type="email"
           required
+          v-model="form.email"
           placeholder="Your email address">
           <label for="name">Name</label>
           <input
             id="name"
             type="text"
+            v-model="form.name"
             placeholder="Your name (optional)"
           >
-          <label for="userfeedback">Feedback / Feature Request / Bug Report</label>
+          <label for="message">Feedback / Feature Request / Bug Report</label>
           <textarea
-            name="userfeedback"
-            id="userfeedback"
+            name="message"
+            v-model="form.message"
+            id="message"
             cols="30"
             rows="10"></textarea>
-          <input type="hidden" name="form-name" value="feedback" />
-          <p class="hidden">
-            <label>Don’t fill this out: <input name="bot-field"></label>
-          </p>
+
           <button
             class='button'
             type="submit">
@@ -42,6 +40,29 @@
 
 <script>
   export default {
+    data: () => ({
+      form: {
+        name: '',
+        email: '',
+        message: ''
+      }
+    }),
+    methods: {
+      submit () {
+        fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: this.encode({ 'form-name': 'feedback', ...this.form }),
+        })
+        .then(() => this.$router.push({path: '/thanks'}))
+        .catch(error => console.error(error))
+      },
+      encode(data) {
+        return Object.keys(data)
+          .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+          .join('&')
+      },
+    }
   }
 </script>
 
