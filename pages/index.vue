@@ -1,5 +1,5 @@
 <template>
-  <div class="Content">
+  <div class="Content mh">
     <div class="Content__list">
       <color-palette
         v-for="(palette, index) in allPalettes"
@@ -104,3 +104,9 @@
     }
   }
 </script>
+
+<style>
+.mh {
+  min-height: 60vh;
+}
+</style>
