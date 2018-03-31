@@ -9,13 +9,19 @@ module.exports = {
   ],
   modules: [
     '@nuxtjs/apollo',
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-92766713-3'
+    }]
   ],
   apollo: {
     clientConfigs: {
       default: '~/apollo/client-configs/default.js'
     }
   },
+  plugins: [
+    { src: '~plugins/drift.js', ssr: false }
+  ],
   generate: {
     async routes () {
       const uri = 'https://api.graph.cool/simple/v1/cj23bdhqjezf401017zjz3w27'
