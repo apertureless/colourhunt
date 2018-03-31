@@ -4,6 +4,7 @@
       <h1 class="highlight">About <span>Colour Hunt</span></h1>
       <p>Colour Hunt is a <strong>free</strong> community driven website, where designers can post their favorite color palettes.</p>
       <p>As a developer you can choose a palette and get the generated css code or use it as an inspiration for you next web or print project.</p>
+      <p>You can sign up and contribute new palettes or vote on existing ones!</p>
     </div>
   </div>
 </template>
@@ -24,6 +25,10 @@
 
 .Text {
   min-height: 60vh;
+
+  @include media($sm-up) {
+    max-width: rem(600);
+  }
   p {
     font-size: rem(18);
   }
