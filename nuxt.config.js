@@ -1,7 +1,6 @@
 const { createApolloFetch } = require('apollo-fetch')
 
 module.exports = {
-  // mode: 'spa',
   extractCSS: true,
   css: [
     'node_modules/modern-normalize/modern-normalize.css',
@@ -9,7 +8,9 @@ module.exports = {
   ],
   modules: [
     '@nuxtjs/apollo',
-    '@nuxtjs/pwa',
+    ['@nuxtjs/pwa', {
+      meta: false
+    }],
     ['@nuxtjs/google-analytics', {
       id: 'UA-92766713-3'
     }]
@@ -42,7 +43,10 @@ module.exports = {
       try {
         const { data } = await apolloFetch({ query })
         const dynamicRoutes = data.allPalettes.map(palette => `/palette/${palette.id}`)
-        return staticRoutes.concat(dynamicRoutes)
+        const dynamicImageRoutes = data.allPalettes.map(palette => `/image/${palette.id}`)
+        return staticRoutes
+          .concat(dynamicRoutes)
+          .concat(dynamicImageRoutes)
       } catch (err) {
         console.error('🔥 Error:', err)
       }
