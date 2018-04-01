@@ -1,7 +1,7 @@
 const { createApolloFetch } = require('apollo-fetch')
 
 module.exports = {
-  mode: 'spa',
+  // mode: 'spa',
   extractCSS: true,
   css: [
     'node_modules/modern-normalize/modern-normalize.css',
@@ -36,6 +36,7 @@ module.exports = {
       const staticRoutes = [
         '/login',
         '/create',
+        '/about'
       ]
 
       try {

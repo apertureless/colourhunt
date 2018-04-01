@@ -9,7 +9,7 @@ export default (ctx) => {
   // middleware
   const middlewareLink = new ApolloLink((operation, forward) => {
     // auth token
-    const token = localStorage.getItem(GC_AUTH_TOKEN)
+    const token = process.client ? localStorage.getItem(GC_AUTH_TOKEN) : null
     operation.setContext({
       headers: {
         Authorization: token ? `Bearer ${token}` : null

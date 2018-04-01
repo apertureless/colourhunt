@@ -7,8 +7,8 @@ import { GC_USER_ID, GC_AUTH_TOKEN } from '~/constants/settings'
 import { graphQLErrorMessages } from '~/utils/'
 
 const state = {
-  isLoggedIn: !!localStorage.getItem(GC_USER_ID),
-  userId: localStorage.getItem(GC_USER_ID),
+  isLoggedIn: process.client ? !!localStorage.getItem(GC_USER_ID) : false,
+  userId: process.client ? localStorage.getItem(GC_USER_ID) : null,
   pending: false,
   error: null
 }
@@ -28,9 +28,10 @@ const actions = {
       })
 
       const { id, token } = res.data.authenticateUser
-
-      localStorage.setItem(GC_USER_ID, id)
-      localStorage.setItem(GC_AUTH_TOKEN, token)
+      if (process.client) {
+        localStorage.setItem(GC_USER_ID, id)
+        localStorage.setItem(GC_AUTH_TOKEN, token)
+      }
       commit(types.LOGIN_SUCCESS, id)
     } catch (err) {
       const prettyError = graphQLErrorMessages(err)
@@ -54,9 +55,10 @@ const actions = {
 
       const id = res.data.authenticateUser.id
       const token = res.data.authenticateUser.token
-
-      localStorage.setItem(GC_USER_ID, id)
-      localStorage.setItem(GC_AUTH_TOKEN, token)
+      if (process.client) {
+        localStorage.setItem(GC_USER_ID, id)
+        localStorage.setItem(GC_AUTH_TOKEN, token)
+      }
       commit(types.SIGNUP_SUCCESS, id)
     } catch (err) {
       const prettyError = graphQLErrorMessages(err)
@@ -66,8 +68,10 @@ const actions = {
 
   },
   logout ({commit}) {
-    localStorage.removeItem(GC_USER_ID)
-    localStorage.removeItem(GC_AUTH_TOKEN)
+    if (process.client) {
+      localStorage.removeItem(GC_USER_ID)
+      localStorage.removeItem(GC_AUTH_TOKEN)
+    }
     commit(types.LOGOUT)
   }
 }
