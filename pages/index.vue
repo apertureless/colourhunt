@@ -39,7 +39,7 @@
           { name: 'twitter:site', content: '@apertureless' },
           { name: 'twitter:title', content: '🎨 Colour Hunt | Community driven color palettes' },
           { name: 'twitter:description', content: '🎨 Colour Hunt is a community driven color palette collection. Grab beautiful color palettes for your next project.' },
-          { name: 'twitter:image', content: '/images/colourhunt-twitter.png' },
+          { name: 'twitter:image', content: 'https://www.colourhunt.com/images/colourhunt-intro.png' },
           { name: 'twitter:image:alt', content: 'colourhunt.com' },
           { name: 'description', content: '🎨 Colour Hunt is a community driven color palette collection. Grab beautiful color palettes for your next project.'},
           {
@@ -50,7 +50,7 @@
           {
             hid: `og:image`,
             property: 'og:image',
-            content: '/images/colourhunt-twitter.png'
+            content: 'https://www.colourhunt.com/images/colourhunt-intro.png'
           }
         ]
       }
