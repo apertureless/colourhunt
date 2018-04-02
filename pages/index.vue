@@ -38,9 +38,9 @@
           { name: 'twitter:card', content: 'summary_large_image' },
           { name: 'twitter:site', content: '@apertureless' },
           { name: 'twitter:title', content: '🎨 Colour Hunt | Community driven color palettes' },
-          { name: 'twitter:description', content: '🎨 Colour Hunt is a community driven color palette collection. Grab beautiful color palettes for your next project.' },
+          { name: 'twitter:description', content: 'Colour Hunt is a community driven color palette collection. Grab beautiful color palettes for your next project.' },
           { name: 'twitter:image', content: 'https://www.colourhunt.com/images/colourhunt-intro.png' },
-          { name: 'twitter:image:alt', content: 'colourhunt.com' },
+          { name: 'twitter:image:alt', content: 'https://www.colourhunt.com' },
           { name: 'description', content: '🎨 Colour Hunt is a community driven color palette collection. Grab beautiful color palettes for your next project.'},
           {
             hid: `og:title`,
