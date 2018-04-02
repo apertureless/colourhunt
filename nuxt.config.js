@@ -24,35 +24,36 @@ module.exports = {
   plugins: [
     { src: '~plugins/drift.js', ssr: false }
   ],
-  // generate: {
-  //   async routes () {
-  //     const uri = 'https://api.graph.cool/simple/v1/cj23bdhqjezf401017zjz3w27'
-  //     const apolloFetch = createApolloFetch({ uri })
-  //     const query = `
-  //     query allPalettes {
-  //       allPalettes {
-  //         id
-  //       }
-  //     }
-  //     `
-  //     const staticRoutes = [
-  //       '/login',
-  //       '/create',
-  //       '/about'
-  //     ]
+  generate: {
+    fallback: true,
+    async routes () {
+      const uri = 'https://api.graph.cool/simple/v1/cj23bdhqjezf401017zjz3w27'
+      const apolloFetch = createApolloFetch({ uri })
+      const query = `
+      query allPalettes {
+        allPalettes {
+          id
+        }
+      }
+      `
+      const staticRoutes = [
+        '/login',
+        '/create',
+        '/about'
+      ]
 
-  //     try {
-  //       const { data } = await apolloFetch({ query })
-  //       const dynamicRoutes = data.allPalettes.map(palette => `/palette/${palette.id}`)
-  //       const dynamicImageRoutes = data.allPalettes.map(palette => `/image/${palette.id}`)
-  //       return staticRoutes
-  //         .concat(dynamicRoutes)
-  //         .concat(dynamicImageRoutes)
-  //     } catch (err) {
-  //       console.error('🔥 Error:', err)
-  //     }
-  //   }
-  // },
+      try {
+        const { data } = await apolloFetch({ query })
+        const dynamicRoutes = data.allPalettes.map(palette => `/palette/${palette.id}`)
+        const dynamicImageRoutes = data.allPalettes.map(palette => `/image/${palette.id}`)
+        return staticRoutes
+          .concat(dynamicRoutes)
+          .concat(dynamicImageRoutes)
+      } catch (err) {
+        console.error('🔥 Error:', err)
+      }
+    }
+  },
   /*
   ** Headers of the page
   */
