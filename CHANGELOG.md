@@ -2,6 +2,40 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.5.0"></a>
+# [1.5.0](https://github.com/apertureless/colourhunt/compare/v1.4.0...v1.5.0) (2018-04-02)
+
+
+### Bug Fixes
+
+* **about:** Set max-width of text ([355be9e](https://github.com/apertureless/colourhunt/commit/355be9e))
+* **build:** Change mode back to spa ([49971c8](https://github.com/apertureless/colourhunt/commit/49971c8))
+* **build:** Fix failing build ([2a0f68b](https://github.com/apertureless/colourhunt/commit/2a0f68b))
+* **feedback:** Fix label naming ([c79658c](https://github.com/apertureless/colourhunt/commit/c79658c))
+* **feedback:** Fix missing action on feedback form ([5677eaf](https://github.com/apertureless/colourhunt/commit/5677eaf))
+* **feedback:** Rewrite feedback form as nuxt is running in spa mode ([9e0d02e](https://github.com/apertureless/colourhunt/commit/9e0d02e))
+* **feedback-button:** Remove feedback button until its working ([f2c52a8](https://github.com/apertureless/colourhunt/commit/f2c52a8))
+* **seo:** Add new facebook & twitter image ([02f8765](https://github.com/apertureless/colourhunt/commit/02f8765))
+* **seo:** Fix image location for open graph ([0cc207d](https://github.com/apertureless/colourhunt/commit/0cc207d))
+* **seo:** Fix open graph image name. Jesus. Last commit for today... ([4f77f9a](https://github.com/apertureless/colourhunt/commit/4f77f9a))
+* **swatch:** Fix click handling on swatch ([3f426ec](https://github.com/apertureless/colourhunt/commit/3f426ec))
+
+
+### Features
+
+* **build:** Change mode to universial ([618293f](https://github.com/apertureless/colourhunt/commit/618293f))
+* **create:** Add preview header to creation page ([7a9e193](https://github.com/apertureless/colourhunt/commit/7a9e193))
+* **drift:** Add driftjs for feedback as nuxt plugin ([071a825](https://github.com/apertureless/colourhunt/commit/071a825))
+* **feedback:** Add feedback form ([3dff6a8](https://github.com/apertureless/colourhunt/commit/3dff6a8))
+* **feedback-button:** Add feedback button ([e7bd66c](https://github.com/apertureless/colourhunt/commit/e7bd66c))
+* **footer:** Add footer with social links and about page ([f26a75a](https://github.com/apertureless/colourhunt/commit/f26a75a))
+* **lazy-load:** Add pagination and lazy loading ([a34ec9c](https://github.com/apertureless/colourhunt/commit/a34ec9c))
+* **seo:** Add custom page for social media image generation ([8ad268b](https://github.com/apertureless/colourhunt/commit/8ad268b))
+* **seo:** Add GA plugin and cookie-law ([1fac2a6](https://github.com/apertureless/colourhunt/commit/1fac2a6))
+* **upvote:** Add triangle to indicate upvote function ([9e5b99c](https://github.com/apertureless/colourhunt/commit/9e5b99c))
+
+
+
 <a name="1.4.0"></a>
 # [1.4.0](https://github.com/apertureless/colourhunt/compare/v1.3.0...v1.4.0) (2018-03-27)
 
