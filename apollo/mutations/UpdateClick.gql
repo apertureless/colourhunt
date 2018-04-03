@@ -1,0 +1,12 @@
+mutation updateClickCount ($id: ID!, $clicks: Int!) {
+  updatePaletteStat (
+    id: $id,
+    clicks: $clicks
+  ) {
+    id
+    clicks
+    palette {
+      id
+    }
+  }
+}

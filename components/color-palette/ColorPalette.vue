@@ -14,6 +14,9 @@
       </div>
     </router-link>
     <div class="Color-palette__meta">
+      <div class="Color-palette__views">
+       👁 ️{{(colorpalette.stats && colorpalette.stats.clicks) ||  0}}
+      </div>
       <upvote-button
         :id="colorpalette.id"
         :votes="colorpalette.votes"
@@ -60,7 +63,7 @@
     }
 
     @include media($sm-up) {
-      flex: 0 1 calc(25% - 22px);
+      flex: 0 1 calc(33.33% - #{rem(22)});
     }
 
     @include has(colors) {
@@ -86,6 +89,17 @@
       bottom: 0;
       right: 0;
       padding: rem(15);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    @include has(views) {
+      margin-right: rem(8);
+      font-size: rem(12);
+      text-transform: uppercase;
+      font-weight: bold;
+      color: color(text-color);
     }
 
     @include has(upvotes) {

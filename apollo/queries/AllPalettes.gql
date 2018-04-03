@@ -3,6 +3,10 @@ query allPalettes ($first: Int, $skip: Int, $orderBy: PaletteOrderBy) {
     id
     title
     colors
+    stats {
+      id
+      clicks
+    }
     votes {
       id
       user {

@@ -1,0 +1,9 @@
+mutation createPaletteStat ($paletteId: ID!, $clicks: Int!) {
+  createPaletteStat (paletteId: $paletteId, clicks: $clicks) {
+    id
+    clicks
+    palette {
+      id
+    }
+  }
+}

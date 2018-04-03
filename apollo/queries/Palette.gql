@@ -3,5 +3,9 @@ query palette($id: ID!) {
     id
     colors
     title
+    stats {
+      id
+      clicks
+    }
   }
 }

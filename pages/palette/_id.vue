@@ -48,6 +48,11 @@
 
 <script>
   import PALETTE from '~/apollo/queries/Palette'
+  import CREATE_CLICK from '~/apollo/mutations/CreateClick'
+  import UPDATE_CLICK from '~/apollo/mutations/UpdateClick'
+  import ALL_PALETTES from '~/apollo/queries/AllPalettes'
+  import { PALETTES_PER_PAGE } from '~/constants/settings'
+
   import { Tabs, Tab } from 'vue-tabs-component'
 
   const ColorPreview = () => import(/* webpackChunkName: 'color-preview' */'~/components/color-palette/ColorPreview')
@@ -66,7 +71,8 @@
     data () {
       return {
         Palette: {},
-        loading: 0
+        loading: 0,
+        clicked: false
       }
     },
     apollo: {
@@ -77,7 +83,57 @@
           return {
             id: this.$route.params.id
           }
+        },
+        result ({data}) {
+          if (!data.Palette.stats) {
+            this.createClickStat()
+          } else if (!this.clicked) {
+            this.updateClickStat()
+          }
         }
+      }
+    },
+    methods: {
+      createClickStat () {
+        const paletteId = this.Palette.id
+        this.$apollo.mutate({
+          mutation: CREATE_CLICK,
+          variables: {
+            paletteId: paletteId,
+            clicks: 1
+          },
+          update: (store, { data: { createPaletteStat } }) => {
+            this.updateStoreAfterClick(store, createPaletteStat, paletteId)
+          }
+        })
+      },
+      updateClickStat () {
+        let currentClicks = (this.Palette.stats && this.Palette.stats.clicks) || 0
+        currentClicks++
+        const statId = this.Palette.stats.id
+        const paletteId = this.Palette.id
+
+        this.$apollo.mutate({
+          mutation: UPDATE_CLICK,
+          variables: {
+            id: statId,
+            clicks: currentClicks
+          }
+        })
+        this.clicked = true
+      },
+      updateStoreAfterClick (store, createPaletteStat, paletteId) {
+        const data = store.readQuery({
+          query: ALL_PALETTES,
+          variables: {
+            first: PALETTES_PER_PAGE,
+            skip: 0,
+            orderBy: 'createdAt_DESC'
+          }
+        })
+        const clickedPalette = data.allPalettes.find(palette => palette.id === paletteId)
+        clickedPalette.stats = createPaletteStat
+        store.writeQuery({ query: ALL_PALETTES, data })
       }
     }
   }
