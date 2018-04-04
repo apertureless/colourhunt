@@ -26,6 +26,8 @@ module.exports = {
     { src: '~plugins/drift.js', ssr: false }
   ],
   sitemap: {
+    generate: true,
+    hostname: 'https://www.colourhunt.com',
     async routes () {
       const uri = 'https://api.graph.cool/simple/v1/cj23bdhqjezf401017zjz3w27'
       const apolloFetch = createApolloFetch({ uri })
