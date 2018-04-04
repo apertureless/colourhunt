@@ -9,6 +9,7 @@ module.exports = {
   ],
   modules: [
     '@nuxtjs/apollo',
+    '@nuxtjs/sitemap',
     ['@nuxtjs/pwa', {
       meta: false
     }],
@@ -24,6 +25,27 @@ module.exports = {
   plugins: [
     { src: '~plugins/drift.js', ssr: false }
   ],
+  sitemap: {
+    async routes () {
+      const uri = 'https://api.graph.cool/simple/v1/cj23bdhqjezf401017zjz3w27'
+      const apolloFetch = createApolloFetch({ uri })
+      const query = `
+      query allPalettes {
+        allPalettes {
+          id
+        }
+      }
+      `
+
+      try {
+        const { data } = await apolloFetch({ query })
+        const dynamicRoutes = data.allPalettes.map(palette => `/palette/${palette.id}`)
+        return dynamicRoutes
+      } catch (err) {
+        console.error('🔥 Error:', err)
+      }
+    }
+  },
   generate: {
     fallback: true,
     async routes () {

@@ -16,6 +16,7 @@
     "@nuxtjs/apollo": "^3.0.5",
     "@nuxtjs/google-analytics": "^2.0.2",
     "@nuxtjs/pwa": "^2.0.8",
+    "@nuxtjs/sitemap": "^0.0.3",
     "apollo-cache-inmemory": "^1.1.11",
     "apollo-client": "^2.2.7",
     "apollo-fetch": "^0.7.0",
