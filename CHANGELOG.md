@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.6.0"></a>
+# [1.6.0](https://github.com/apertureless/colourhunt/compare/v1.5.0...v1.6.0) (2018-04-09)
+
+
+### Bug Fixes
+
+* **auth:** Fix bug where ls was not read properly ([32d0fa3](https://github.com/apertureless/colourhunt/commit/32d0fa3))
+* **build:** Add spa fallback ([f565f36](https://github.com/apertureless/colourhunt/commit/f565f36))
+* **seo:** Change sitemap from middleware to generation ([b7d37b5](https://github.com/apertureless/colourhunt/commit/b7d37b5))
+
+
+### Features
+
+* **palette:** Add tracking for palette views ([1410ced](https://github.com/apertureless/colourhunt/commit/1410ced))
+* **seo:** Add google console confirmation ([e6ddce3](https://github.com/apertureless/colourhunt/commit/e6ddce3))
+* **seo:** Add sitemap module ([01088ac](https://github.com/apertureless/colourhunt/commit/01088ac))
+* **signup:** Update vue-password dependency and add show/hide password button ([c753d68](https://github.com/apertureless/colourhunt/commit/c753d68))
+
+
+
 <a name="1.5.0"></a>
 # [1.5.0](https://github.com/apertureless/colourhunt/compare/v1.4.0...v1.5.0) (2018-04-02)
 
