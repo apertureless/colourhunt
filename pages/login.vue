@@ -29,6 +29,8 @@
           v-else
           placeholder="Please choose a secure password"
           v-model="password"
+          :badge="false"
+          :toggle="true"
         />
         <ul
           v-if="authErrors"

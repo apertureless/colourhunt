@@ -75,9 +75,9 @@
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/@nextindex/next-scss/-/next-scss-1.2.1.tgz#046a564c0050551eee8ce80ba64a35b644952cf0"
 
-"@nuxtjs/apollo@^3.0.5":
-  version "3.0.5"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/apollo/-/apollo-3.0.5.tgz#c0f86a1862be235eab8ec1e0ee169425156c0518"
+"@nuxtjs/apollo@^3.0.6":
+  version "3.0.6"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/apollo/-/apollo-3.0.6.tgz#35bac2c192533242e186d0996731be0f99763308"
   dependencies:
     apollo-cache-inmemory "^1.1.10"
     apollo-client "^2.2.6"
@@ -281,7 +281,7 @@ anymatch@^2.0.0:
     micromatch "^3.1.4"
     normalize-path "^2.1.1"
 
-apollo-cache-inmemory@^1.1.10, apollo-cache-inmemory@^1.1.11:
+apollo-cache-inmemory@^1.1.10:
   version "1.1.11"
   resolved "https://registry.yarnpkg.com/apollo-cache-inmemory/-/apollo-cache-inmemory-1.1.11.tgz#2a96ad076f40575d622c4a45b1eeced18b2dc8ec"
   dependencies:
@@ -289,13 +289,27 @@ apollo-cache-inmemory@^1.1.10, apollo-cache-inmemory@^1.1.11:
     apollo-utilities "^1.0.10"
     graphql-anywhere "^4.1.7"
 
+apollo-cache-inmemory@^1.1.12:
+  version "1.1.12"
+  resolved "https://registry.yarnpkg.com/apollo-cache-inmemory/-/apollo-cache-inmemory-1.1.12.tgz#ab489bf046b3e026556ab28bdebb6e010cac9531"
+  dependencies:
+    apollo-cache "^1.1.7"
+    apollo-utilities "^1.0.11"
+    graphql-anywhere "^4.1.8"
+
 apollo-cache@^1.1.6:
   version "1.1.6"
   resolved "https://registry.yarnpkg.com/apollo-cache/-/apollo-cache-1.1.6.tgz#b953488bcc8244e001b9ab9c8b362a1512e9203f"
   dependencies:
     apollo-utilities "^1.0.10"
 
-apollo-client@^2.2.6, apollo-client@^2.2.7:
+apollo-cache@^1.1.7:
+  version "1.1.7"
+  resolved "https://registry.yarnpkg.com/apollo-cache/-/apollo-cache-1.1.7.tgz#5817018a2fbfc05a21ba319bd17a3e7538110cc5"
+  dependencies:
+    apollo-utilities "^1.0.11"
+
+apollo-client@^2.2.6:
   version "2.2.7"
   resolved "https://registry.yarnpkg.com/apollo-client/-/apollo-client-2.2.7.tgz#d5adbda81ef1f1c9c105ac71227ca8dc42b5731b"
   dependencies:
@@ -304,6 +318,20 @@ apollo-client@^2.2.6, apollo-client@^2.2.7:
     apollo-link "^1.0.0"
     apollo-link-dedup "^1.0.0"
     apollo-utilities "^1.0.10"
+    symbol-observable "^1.0.2"
+    zen-observable "^0.7.0"
+  optionalDependencies:
+    "@types/async" "2.0.47"
+
+apollo-client@^2.2.8:
+  version "2.2.8"
+  resolved "https://registry.yarnpkg.com/apollo-client/-/apollo-client-2.2.8.tgz#b604d31ab2d2dd00db3105d8793b93ee02ce567e"
+  dependencies:
+    "@types/zen-observable" "^0.5.3"
+    apollo-cache "^1.1.7"
+    apollo-link "^1.0.0"
+    apollo-link-dedup "^1.0.0"
+    apollo-utilities "^1.0.11"
     symbol-observable "^1.0.2"
     zen-observable "^0.7.0"
   optionalDependencies:
@@ -345,6 +373,10 @@ apollo-link@^1.0.0, apollo-link@^1.2.1:
 apollo-utilities@^1.0.0, apollo-utilities@^1.0.10:
   version "1.0.10"
   resolved "https://registry.yarnpkg.com/apollo-utilities/-/apollo-utilities-1.0.10.tgz#0c35696891d4fa28d76768e0f7249d63c6da08b9"
+
+apollo-utilities@^1.0.11:
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/apollo-utilities/-/apollo-utilities-1.0.11.tgz#cd36bfa6e5c04eea2caf0c204a0f38a0ad550802"
 
 aproba@^1.0.3, aproba@^1.1.1:
   version "1.2.0"
@@ -2441,9 +2473,9 @@ escope@^3.6.0:
     esrecurse "^4.1.0"
     estraverse "^4.1.1"
 
-eslint-friendly-formatter@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/eslint-friendly-formatter/-/eslint-friendly-formatter-4.0.0.tgz#f9b8962c15a23eefa85399bbea62ffe167439fd5"
+eslint-friendly-formatter@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/eslint-friendly-formatter/-/eslint-friendly-formatter-4.0.1.tgz#27d504dc837f7caddbf201b2e84a4ee730ba3efa"
   dependencies:
     chalk "^2.0.1"
     coalescy "1.0.0"
@@ -3148,6 +3180,12 @@ graphql-anywhere@^4.1.7:
   resolved "https://registry.yarnpkg.com/graphql-anywhere/-/graphql-anywhere-4.1.7.tgz#cbb9106905bcc25bc0e8390548a97f8b154d3f9b"
   dependencies:
     apollo-utilities "^1.0.10"
+
+graphql-anywhere@^4.1.8:
+  version "4.1.8"
+  resolved "https://registry.yarnpkg.com/graphql-anywhere/-/graphql-anywhere-4.1.8.tgz#23882e6a16ec824febbe5bca40937cdd76c5acdc"
+  dependencies:
+    apollo-utilities "^1.0.11"
 
 graphql-tag@^2.8.0:
   version "2.8.0"
@@ -7279,15 +7317,15 @@ vue-apollo@^3.0.0-beta.5:
     lodash.omit "^4.5.0"
     lodash.throttle "^4.1.1"
 
-vue-clickaway@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/vue-clickaway/-/vue-clickaway-2.1.0.tgz#392de764751f31cd20787e8fb3a6e319825f8d4f"
+vue-clickaway@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/vue-clickaway/-/vue-clickaway-2.2.1.tgz#c22b5654391849193f77d36889cc44345ccc60c1"
   dependencies:
     loose-envify "^1.2.0"
 
-vue-color@^2.4.5:
-  version "2.4.5"
-  resolved "https://registry.yarnpkg.com/vue-color/-/vue-color-2.4.5.tgz#904e8f1bc62d107e4bc858acd7e5d836094d135d"
+vue-color@^2.4.6:
+  version "2.4.6"
+  resolved "https://registry.yarnpkg.com/vue-color/-/vue-color-2.4.6.tgz#9dcd5850f7eec5ee3ac0b20bec7bbffb5f475f64"
   dependencies:
     lodash.throttle "^4.0.0"
     material-colors "^1.0.0"
@@ -7338,9 +7376,9 @@ vue-meta@^1.4.3:
     lodash.isplainobject "^4.0.6"
     object-assign "^4.1.1"
 
-vue-password-strength-meter@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/vue-password-strength-meter/-/vue-password-strength-meter-1.1.1.tgz#0cf696bd21945f25c038bc7102a581194e6a83d2"
+vue-password-strength-meter@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/vue-password-strength-meter/-/vue-password-strength-meter-1.2.1.tgz#ae322313abf946d98d586022324f52533d575551"
 
 vue-prism-component@^1.0.1:
   version "1.0.1"
