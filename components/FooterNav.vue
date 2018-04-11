@@ -36,7 +36,7 @@
   .footer {
     background: #fff;
     border-top: 1px solid color(border-color);
-    padding: rem(16);
+    padding: rem(32);
 
     ul {
       padding: 0;
