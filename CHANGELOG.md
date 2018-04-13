@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.7.0"></a>
+# [1.7.0](https://github.com/apertureless/colourhunt/compare/v1.6.0...v1.7.0) (2018-04-13)
+
+
+### Bug Fixes
+
+* **color-preview:** Remove mo-js import ([551f083](https://github.com/apertureless/colourhunt/commit/551f083))
+* **footer:** Add more padding to footer ([2f189d7](https://github.com/apertureless/colourhunt/commit/2f189d7))
+* **palettes:** Increase palettes per page to 21 ([6c51eb8](https://github.com/apertureless/colourhunt/commit/6c51eb8))
+* **remove swatch:** Decrease button size and align to the right ([039d678](https://github.com/apertureless/colourhunt/commit/039d678))
+
+
+### Features
+
+* **clipboard:** Add copy to clipboard function ([fa731db](https://github.com/apertureless/colourhunt/commit/fa731db))
+
+
+
 <a name="1.6.0"></a>
 # [1.6.0](https://github.com/apertureless/colourhunt/compare/v1.5.0...v1.6.0) (2018-04-09)
 
