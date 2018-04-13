@@ -48,14 +48,15 @@
     }
 
     .close {
-      margin: rem(5);
+      margin: rem(8) rem(8) auto auto;
       display: none;
       justify-content: center;
       align-items: center;
       border-radius: 100%;
       background: #fff;
-      width: rem(30);
-      height: rem(30);
+      width: rem(23);
+      height: rem(23);
+      font-size: rem(12);
       box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
 
       &:hover {
