@@ -1,6 +1,10 @@
-# colourhunt
+# Colour Hunt
 
-> Nuxt.js project
+This is the official repository of [Colour Hunt](https://www.colourhunt.com). This project is build with Vue.js, Nuxt and Graph.cool
+
+## Contribution
+
+Feel free to contribute.
 
 ## Build Setup
 
