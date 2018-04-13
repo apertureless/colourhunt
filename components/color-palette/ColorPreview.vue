@@ -20,7 +20,6 @@
 
 <script>
   import * as ClipboardJS from 'clipboard'
-  import { Burst } from 'mo-js'
 
   export default {
     name: 'ColorPreview',
