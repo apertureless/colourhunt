@@ -70,7 +70,10 @@
     align-items: flex-end;
     transition: all .2s ease-in;
     cursor: url('~/assets/images/clipboard-cursor.png'), auto;
-
+    &:active {
+      flex: 3;
+      opacity: .7;
+    }
     &:hover {
       flex: 3;
 
