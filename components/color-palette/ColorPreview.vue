@@ -8,6 +8,8 @@
       :key="index"
       v-bind:style="{backgroundColor: color}"
       class="Color"
+      @click="copied"
+      :data-clipboard-text="color"
     >
       <span class="hex">
         {{ color }}
@@ -17,15 +19,27 @@
 </template>
 
 <script>
+  import * as ClipboardJS from 'clipboard'
+  import { Burst } from 'mo-js'
+
   export default {
+    name: 'ColorPreview',
+    clipboard: null,
     props: {
       colors: {
-        type: Array
+        type: Array,
+        default: () => []
       },
       height: {
         type: Number,
         default: 50
       }
+    },
+    created () {
+      this.$options.clipboard = new ClipboardJS('.Color')
+    },
+    beforeDestroy () {
+      this.$options.clipboard.destroy()
     }
   }
 </script>
@@ -49,7 +63,6 @@
     color: color(background-light);
     transform: translateY(20px);
     width: 0;
-    // transition: transform .3s ease-in-out, width .4s linear;
   }
 
   .Color {
@@ -57,6 +70,7 @@
     display: flex;
     align-items: flex-end;
     transition: all .2s ease-in;
+    cursor: url('~/assets/images/clipboard-cursor.png'), auto;
 
     &:hover {
       flex: 3;

@@ -1,12 +1,12 @@
 <template>
 <transition name="slide-fade">
   <div class="Color-palette">
+    <div class="Color-palette__colors">
+      <color-preview :colors="colorpalette.colors" />
+    </div>
     <router-link
       :to="`/palette/${colorpalette.id}`"
       class="Color__link">
-      <div class="Color-palette__colors">
-        <color-preview :colors="colorpalette.colors" />
-      </div>
       <div class="Color-palette__content">
         <div class="Color-palette__title">
           {{ colorpalette.title }}

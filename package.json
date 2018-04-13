@@ -22,6 +22,7 @@
     "apollo-fetch": "^0.7.0",
     "apollo-link": "^1.2.1",
     "apollo-link-http": "^1.5.3",
+    "clipboard": "^2.0.0",
     "graphql": "^0.13.2",
     "graphql-tag": "^2.8.0",
     "nuxt": "^1.0.0",
