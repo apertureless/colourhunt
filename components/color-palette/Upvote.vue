@@ -85,3 +85,15 @@
     }
   }
 </script>
+
+<style lang="scss">
+
+.Color-palette__upvotes {
+  filter: grayscale(100%);
+
+  &.is-active {
+    filter: grayscale(0);
+  }
+}
+
+</style>
