@@ -8,7 +8,6 @@
       :key="index"
       v-bind:style="{backgroundColor: color}"
       class="Color"
-      @click="copied"
       :data-clipboard-text="color"
     >
       <span class="hex">
