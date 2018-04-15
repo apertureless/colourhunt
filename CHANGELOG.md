@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.7.1"></a>
+## [1.7.1](https://github.com/apertureless/colourhunt/compare/v1.7.0...v1.7.1) (2018-04-15)
+
+
+### Bug Fixes
+
+* **color-preview:** Add active state and prevent color field to shrink on click ([75b4b10](https://github.com/apertureless/colourhunt/commit/75b4b10))
+* **color-preview:** Remove old click handler function ([3a3c919](https://github.com/apertureless/colourhunt/commit/3a3c919))
+* **upvote:** Change inactive color to grayscale to provide better contrast between voted and not voted ([a7fe2a8](https://github.com/apertureless/colourhunt/commit/a7fe2a8))
+
+
+
 <a name="1.7.0"></a>
 # [1.7.0](https://github.com/apertureless/colourhunt/compare/v1.6.0...v1.7.0) (2018-04-13)
 
