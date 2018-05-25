@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.8.0"></a>
+# [1.8.0](https://github.com/apertureless/colourhunt/compare/v1.7.1...v1.8.0) (2018-05-25)
+
+
+### Features
+
+* **privacy:** Remove GA ([c3ef6c4](https://github.com/apertureless/colourhunt/commit/c3ef6c4))
+* **privacy:** Remove signup and cookie law plugin ([a8e34ad](https://github.com/apertureless/colourhunt/commit/a8e34ad))
+
+
+
 <a name="1.7.1"></a>
 ## [1.7.1](https://github.com/apertureless/colourhunt/compare/v1.7.0...v1.7.1) (2018-04-15)
 
