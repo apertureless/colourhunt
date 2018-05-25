@@ -12,9 +12,6 @@ module.exports = {
     '@nuxtjs/sitemap',
     ['@nuxtjs/pwa', {
       meta: false
-    }],
-    ['@nuxtjs/google-analytics', {
-      id: 'UA-92766713-3'
     }]
   ],
   apollo: {
