@@ -19,9 +19,6 @@ module.exports = {
       default: '~/apollo/client-configs/default.js'
     }
   },
-  plugins: [
-    { src: '~plugins/drift.js', ssr: false }
-  ],
   sitemap: {
     generate: true,
     hostname: 'https://www.colourhunt.com',
