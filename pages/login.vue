@@ -49,11 +49,11 @@
         >
           {{canLogin ? 'login' : 'create account'}}
         </button>
-        <button
+        <!-- <button
           class="button-clean"
           @click.prevent="canLogin = !canLogin">
           {{canLogin ? 'Need to create an account?' : 'Already have an account?'}}
-        </button>
+        </button> -->
       </fieldset>
     </form>
   </div>
