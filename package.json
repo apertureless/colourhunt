@@ -10,7 +10,9 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "precommit": "npm run lint"
+    "precommit": "npm run lint",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "@nuxtjs/apollo": "^3.0.6",
@@ -25,7 +27,7 @@
     "clipboard": "^2.0.0",
     "graphql": "^0.13.2",
     "graphql-tag": "^2.8.0",
-    "nuxt": "^1.0.0",
+    "nuxt": "^1.4.0",
     "prismjs": "^1.13.0",
     "vue-apollo": "^3.0.0-beta.5",
     "vue-clickaway": "^2.2.1",
@@ -34,7 +36,8 @@
     "vue-password-strength-meter": "^1.2.1",
     "vue-prism-component": "^1.0.1",
     "vue-tabs-component": "^1.4.0",
-    "zxcvbn": "^4.4.2"
+    "zxcvbn": "^4.4.2",
+    "snyk": "^1.116.2"
   },
   "devDependencies": {
     "@nextindex/next-scss": "^1.2.1",
@@ -50,5 +53,6 @@
     "purgecss-webpack-plugin": "^0.22.0",
     "sass-loader": "^6.0.7",
     "tailwindcss": "^0.5.1"
-  }
+  },
+  "snyk": true
 }
