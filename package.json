@@ -27,7 +27,7 @@
     "graphql-tag": "^2.8.0",
     "nuxt": "^1.0.0",
     "prismjs": "^1.13.0",
-    "vue-apollo": "^3.0.0-beta.5",
+    "vue-apollo": "^3.0.0",
     "vue-clickaway": "^2.2.1",
     "vue-color": "^2.4.6",
     "vue-cookie-law": "^1.4.0",
