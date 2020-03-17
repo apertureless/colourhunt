@@ -25,7 +25,7 @@
     "clipboard": "^2.0.0",
     "graphql": "^0.13.2",
     "graphql-tag": "^2.8.0",
-    "nuxt": "^1.0.0",
+    "nuxt": "^2.3.0",
     "prismjs": "^1.13.0",
     "vue-apollo": "^3.0.0-beta.5",
     "vue-clickaway": "^2.2.1",
